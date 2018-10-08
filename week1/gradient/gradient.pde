@@ -1,8 +1,19 @@
 
-size(256, 256);
+void setup() {
+  size(800, 800);
+  }
 
-loadPixels();
+void draw() {
+  background(50);
+  
 
-// do something here!
-
-updatePixels();
+  loadPixels();
+  
+  for (int y = 0; y < height; y++) {
+    for (int x = 0; x < width; x++) {
+    pixels[x+y*width] = color (x/2,y/2,y/2);
+    
+    }
+  }
+  updatePixels();
+}
