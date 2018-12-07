@@ -1,37 +1,20 @@
-Ball[] balls = new Ball[100];
+// In this sketch you learn how to create a group of particles which a number of
+//determined elements due to its quality of being an array (for undetermined see arrylist examples).
+// This particles stay within the canvas due to a conditional statement. And it movement
+// and size is determined randomly with an specific set of rules. 
+//See detailes explanation of each element ahead.
 
-class Ball {
-  PVector pos, vel;
-  float radius;
-
-  Ball(float x, float y, float radius) {
-    pos = new PVector(x, y);
-    vel = new PVector(random(-3, 3), random(-3, 3));
-    this.radius = radius;
-  }
-
-  void update() {
-
-    pos.add(vel);
-
-    if ((pos.x < radius) || (pos.x > width - radius)) {
-      vel.x *= -1;
-    }
-    if ((pos.y < radius) || (pos.y < height - radius)) {
-      vel.y *= -1;
-    }
-  }
-
-  void draw() {
-    ellipse(pos.x, pos.y, radius * 2, radius*2);
-  }
-}
+// Here the drawing begins
 
 
+// This array determines the number of balls to be displayed
+Ball[] balls = new Ball[100]; 
 
+// Inside this function we can found the for loop to draw the balls and keep them inside 
+// the canvas including the limits of each ball. 
 void setup() {
   size(500, 500);
-  
+
 
   for (int i = 0; i < balls.length; i++) {
     float radius = random(10, 20);
@@ -41,10 +24,17 @@ void setup() {
   }
 }
 
+// with these two functions (the one above and the one below) we call the class ball
+// into the drawing. We call the funtions of the class with a specific structure that is 
+// formed by an array, an index that calls new Ball and the functions that the class has
+// exmaple:
+//Ball[] balls = new Ball[100]; 
+//balls[i] = new Ball(x, y, radius);
+//b.draw();
+
+
 void draw() {
   background(0);
-  
-
   for (Ball b : balls) {
     b.draw();
     b.update();
