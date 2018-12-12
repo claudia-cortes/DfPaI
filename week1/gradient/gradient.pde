@@ -22,7 +22,7 @@ void draw() {
 
   for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
-      pixels[x+y*width] = color (x/2, y/2, y/2);
+      pixels[x+y*width] = color (mouseX, mouseY, y/2);
       // the formula "x + y = width" allows you to go along all the pixels 
       // because of the poxels array and modify their color at once by
       // modifying the RGB parameters

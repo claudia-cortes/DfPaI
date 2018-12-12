@@ -1,4 +1,5 @@
-// In this sketch you learn how 
+// In this sketch you learn how to replace the background of a video of an specific image
+// See detailes explanation ahead.
 
 // You need to download the library to read video inside processing. 
 // You will find this in sketch.
